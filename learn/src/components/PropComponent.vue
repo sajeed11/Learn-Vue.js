@@ -1,7 +1,9 @@
 <template >
-    <div>
-        <h1>{{ dumb }}</h1>
-        <h1>{{ numb }}</h1>
+    <div @click="closeThis">
+        <div>
+            <h1>{{ dumb }}</h1>
+            <h2>{{ numb }}</h2>
+        </div>
     </div>
 </template>
 <script setup>
@@ -9,6 +11,10 @@
         dumb: String,
         numb: Number
     })
+
+function closeThis() {
+        this.$emit('close')
+    }
 </script>
 <style scoped>
     

@@ -1,19 +1,25 @@
 <script setup>
+import { ref } from 'vue';
+
 import CounterComponent from './components/CounterComponent.vue';
 import PropComponent from './components/PropComponent.vue';
+
+const showPropComponent = ref(false);
+
+function toggleShowEvent() {
+  showPropComponent.value = !showPropComponent.value;
+}
 
 </script>
 
 <template>
   <header>
     <CounterComponent />
-  </header>
-
-  <main>
-    <div class="wrapper">
-      <PropComponent dumb="Test" numb="12"/>
+    <button @click.shift="toggleShowEvent">Component :]</button>
+    <div v-if="showPropComponent">
+      <PropComponent dumb="Hello Every Nyan" numb="101010" @close="toggleShowEvent" />
     </div>
-  </main>
+  </header>
 </template>
 
 <style scoped>
