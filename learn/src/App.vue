@@ -1,6 +1,6 @@
 <script setup>
 import CounterComponent from './components/CounterComponent.vue';
-
+import PropComponent from './components/PropComponent.vue';
 
 </script>
 
@@ -8,6 +8,12 @@ import CounterComponent from './components/CounterComponent.vue';
   <header>
     <CounterComponent />
   </header>
+
+  <main>
+    <div class="wrapper">
+      <PropComponent dumb="Test" numb="12"/>
+    </div>
+  </main>
 </template>
 
 <style scoped>
