@@ -15,18 +15,19 @@ function toggleShowEvent() {
 <template>
   <header>
     <CounterComponent>
-      <tamplate v-slot=links style="display: flex; justify-content: space-between">
-        <a href="#">REGISTER</a>
-        <a href="#">LOGIN</a>
-      </tamplate>
-
       <h2>This is a slot</h2>
       <p>TEST TEST TEST TEST</p>
     </CounterComponent>
     <button @click.shift="toggleShowEvent">Component :]</button>
-    <div v-if="showPropComponent">
-      <PropComponent dumb="Hello Every Nyan" numb="101010" @close="toggleShowEvent" />
-    </div>
+    <teleport to=".teleport" v-if="showPropComponent">
+      <PropComponent dumb="Hello Every Nyan" numb="101010" @close="toggleShowEvent">
+        <tamplate v-slot=links style="display: flex; justify-content: space-between">
+        <a href="#">REGISTER</a>
+        <a href="#">LOGIN</a>
+      </tamplate>
+        <p>This is slot test :)</p>
+      </PropComponent>
+    </teleport>
   </header>
 </template>
 

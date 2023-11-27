@@ -2,6 +2,12 @@
     <div @click="closeThis">
         <div>
             <h1>{{ dumb }}</h1>
+            <slot>DEFAULT VLUE :D</slot>
+
+            <div class="actions">
+                <slot name="links"></slot>
+            </div>
+
             <h2>{{ numb }}</h2>
         </div>
     </div>

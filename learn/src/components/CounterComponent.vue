@@ -20,9 +20,7 @@
 
         <slot></slot>
         
-        <div class="actions">
-            <slot name="links"></slot>
-        </div>
+        
     </div>
 </template>
 <script setup>
