@@ -17,6 +17,12 @@
 
         <input type="text" ref="name">
         <button @click="addName">Add Name</button>
+
+        <slot></slot>
+        
+        <div class="actions">
+            <slot name="links"></slot>
+        </div>
     </div>
 </template>
 <script setup>
