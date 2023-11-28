@@ -1,25 +1,26 @@
 <script setup>
 import { ref } from 'vue';
 
-import CounterComponent from './components/CounterComponent.vue';
-import PropComponent from './components/PropComponent.vue';
+// import CounterComponent from './components/CounterComponent.vue';
+// import PropComponent from './components/PropComponent.vue';
+import SignUpForm from './components/SignUpForm.vue';
 
-const showPropComponent = ref(false);
+//const showPropComponent = ref(false);
 
-function toggleShowEvent() {
-  showPropComponent.value = !showPropComponent.value;
-}
+// function toggleShowEvent() {
+//   showPropComponent.value = !showPropComponent.value;
+// }
 
 </script>
 
 <template>
   <header>
-    <CounterComponent>
+    <!-- <CounterComponent>
       <h2>This is a slot</h2>
       <p>TEST TEST TEST TEST</p>
     </CounterComponent>
-    <button @click.shift="toggleShowEvent">Component :]</button>
-    <teleport to=".teleport" v-if="showPropComponent">
+    <button @click.shift="toggleShowEvent">Component :]</button> -->
+    <!-- <teleport to=".teleport" v-if="showPropComponent">
       <PropComponent dumb="Hello Every Nyan" numb="101010" @close="toggleShowEvent">
         <tamplate v-slot=links style="display: flex; justify-content: space-between">
         <a href="#">REGISTER</a>
@@ -27,7 +28,9 @@ function toggleShowEvent() {
       </tamplate>
         <p>This is slot test :)</p>
       </PropComponent>
-    </teleport>
+    </teleport> -->
+
+    <SignUpForm />
   </header>
 </template>
 
