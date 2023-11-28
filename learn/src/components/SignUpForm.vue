@@ -1,10 +1,11 @@
 <template>
-    <form>
+    <form @submit.prevent="handleSubmit">
         <label>Email:</label>
         <input type="email" required v-model="email"/>
 
         <label>Password:</label>
         <input type="password" required v-model="password"/>
+        <div v-if="passwordError" class="passwordError">{{ passwordError }}</div>
 
         <label>Role:</label>
         <select v-model="role">
@@ -35,6 +36,10 @@
             <input type="checkbox" value="nitro" v-model="name">
             <label>Nitro</label>
         </div> -->
+
+        <div class="submit">
+            <button>Create an Account</button>
+        </div>
     </form>
 
     <p>Email: {{ email }}</p>
@@ -51,6 +56,7 @@ const role = ref('');
 const terms = ref(false);
 const tempSkill = ref('');
 const skills = ref([]);
+const passwordError = ref('');
 
 
 const addSkill = (e) => {
@@ -64,6 +70,11 @@ const addSkill = (e) => {
 
 const deleteSkill = (skill) => {
     skills.value = skills.value.filter(s => s !== skill);
+}
+
+const handleSubmit = () => {
+    passwordError.value = password.value.length > 5 ?
+        '' : 'Password must be at least 6 chars long'
 }
 </script>
 <style>
@@ -110,5 +121,22 @@ const deleteSkill = (skill) => {
     .pill{
         color: black;
         font-size: medium;
+    }
+    button {
+        background: #0b6dff;
+        border: 0;
+        padding: 10px 20px;
+        margin-top: 20px;
+        color: white;
+        border-radius: 20px;
+    }
+    .submit {
+        text-align: center;
+    }
+    .passwordError {
+        color: #ff0062;
+        margin-top: 10px;
+        font-size: 0.8em;
+        font-weight: bold;
     }
 </style>
