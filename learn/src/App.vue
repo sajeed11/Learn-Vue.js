@@ -4,6 +4,7 @@ import { ref } from 'vue';
 // import CounterComponent from './components/CounterComponent.vue';
 // import PropComponent from './components/PropComponent.vue';
 import SignUpForm from './components/SignUpForm.vue';
+import JobsComp from './components/JobsComp.vue';
 
 //const showPropComponent = ref(false);
 
@@ -15,6 +16,9 @@ import SignUpForm from './components/SignUpForm.vue';
 
 <template>
   <header>
+    <router-link to="/">Sign up</router-link>
+    <router-link to="/jobs">Jobs</router-link>
+    <router-link to="/counter">About</router-link>
     <!-- <CounterComponent>
       <h2>This is a slot</h2>
       <p>TEST TEST TEST TEST</p>
@@ -29,9 +33,9 @@ import SignUpForm from './components/SignUpForm.vue';
         <p>This is slot test :)</p>
       </PropComponent>
     </teleport> -->
-
-    <SignUpForm />
   </header>
+
+  <RouterView/>
 </template>
 
 <style scoped>
